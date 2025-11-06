@@ -18,7 +18,7 @@
  * - if you really don't want to send DATA_ENTRY_LSB(38), you can send CC RPN_MSB(101) and RPN_LSB(100) with a value of 127 each instead as a terminator.
  * 
  * There's a default timeout of 500 milliseconds on incomplete NRPN CC chain
- * If you define NRPN_VERBOSE before adding this library, an aborted state will be printed out for your debugging
+ * If you define NRPN_VERBOSE before adding this library, any state change will be printed out for your debugging
  *
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -136,10 +136,11 @@ private:
   bool isTimeout() {
     return millis() - startTime >= timeout;
   }
-
+#ifdef NRPN_VERBOSE
   void print() {
     Serial.printf("State %d number %d value %d\n", state, number, value);
   }
+#endif
 
   void setState(NRPNState s, uint8_t value = 0) {
     switch (s) {
@@ -211,7 +212,9 @@ private:
         return;
     }
     this->state = s;
+#ifdef NRPN_VERBOSE
     print();
+#endif
   }
 };
 
