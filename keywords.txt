@@ -1,0 +1,23 @@
+#######################################
+# Syntax Coloring Map 
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+NRPNHandler	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+setHandleNRPN			KEYWORD2
+handleControlChange 			KEYWORD2
+isValid		KEYWORD2
+getNumber			KEYWORD2
+getValue			KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
