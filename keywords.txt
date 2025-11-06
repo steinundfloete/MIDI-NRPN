@@ -6,7 +6,7 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-NRPNHandler	KEYWORD1
+MIDI_NRPN	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)

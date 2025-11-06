@@ -1,4 +1,4 @@
-/* NRPNHandler.h
+/* MIDI-NRPN.h
  *
  * Copyright (c) 2025 by Uli Schmidt steinundfloete@online.de
  * V1.0 11/06/2025 
@@ -40,19 +40,19 @@
  * THE SOFTWARE.
  */
 
-#ifndef _NRPNHANDLER_INCLUDED_H_
-#define _NRPNHANDLER_INCLUDED_H_
+#ifndef _MIDI_NRPN_INCLUDED_H_
+#define _MIDI_NRPN_INCLUDED_H_
 
-class NRPNHandler {
+class MIDI_NRPN {
 public:
   // callback prototype
   typedef void (*HANDLE_NRPN)(uint16_t, uint16_t);
 
-  // instanciate a NRPNHandler.
+  // instanciate a MIDI_NRPN.
   // mode7Bit: set to true if you want to skip DATA_ENTRY_LSB(38).
   // callback: sets the callback or NULL.
   // timeout: timeout for incomplete NRPN control change chain in milliseconds.
-  NRPNHandler(bool mode7Bit = false, HANDLE_NRPN callback = NULL, uint32_t timeout = 500) {
+  MIDI_NRPN(bool mode7Bit = false, HANDLE_NRPN callback = NULL, uint32_t timeout = 500) {
     this->timeout = timeout;
     this->mode7Bit = mode7Bit;
     this->callback = callback;
@@ -215,4 +215,4 @@ private:
   }
 };
 
-#endif  //#ifndef _NRPNHANDLER_INCLUDED_H_
+#endif  //#ifndef _MIDI_NRPN_INCLUDED_H_

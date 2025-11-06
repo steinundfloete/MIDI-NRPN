@@ -1,5 +1,5 @@
 #include <MIDI.h>
-#include <NRPNHandler.h>
+#include <MIDI-NRPN.h>
 
 
 /*
@@ -7,7 +7,7 @@
 */
 
 MIDI_CREATE_INSTANCE(HardwareSerial, Serial1, MIDI);
-NRPNHandler nrpn; // initialize with default values
+MIDI_NRPN nrpn; // initialize with default values
 
 void setup() {
   Serial.begin(115200);

@@ -1,11 +1,11 @@
-#include <NRPNHandler.h>
+#include <MIDI-NRPN.h>
 
 
 /*
  Example for e.g. Teensy with USB Midi enabled
 */
 
-NRPNHandler nrpn;
+MIDI_NRPN nrpn;
 
 void setup() {
   Serial.begin(115200);
