@@ -1,4 +1,4 @@
-# MIDI-NRPN
+# Arduino MIDI NRPN Library
 
 Translates MIDI NRPN from control change (CC) messages and reports NRPN number and value (both 14 bit) to the given callback. 
 It can operate in 7 or 14 bit mode where 14 bit mode is default. 
