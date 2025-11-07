@@ -65,28 +65,29 @@ public:
   }
 
   // must be called from your MIDI callback
-  void handleControlChange(byte channel, byte number, byte value) {
+  // return true if the control change was used
+  bool handleControlChange(byte channel, byte number, byte value) {
     switch (number) {
       case 99:  //NRPN_MSB
         setState(NRPN_NUMBER_MSB, value);
-        break;
+        return true;
       case 98:  //NRPN_LSB
         setState(NRPN_NUMBER_LSB, value);
-        break;
+        return true;
       case 6:  //DataEntryMSB
         setState(NRPN_VALUE_MSB, value);
-        break;
+        return true;
       case 38:  //DataEntryLSB
         setState(NRPN_VALUE_LSB, value);
-        break;
+        return true;
       case 101:  //RPN_MSB
         setState(RPN_NUMBER_MSB, value);
-        break;
+        return true;
       case 100:  //RPN_LSB
         setState(RPN_NUMBER_LSB, value);
-        break;
+        return true;
       default:
-        break;
+        return false;
     }
   }
 
